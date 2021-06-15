@@ -1,0 +1,323 @@
+CREATE TABLE categories (
+    id   INTEGER     PRIMARY KEY AUTOINCREMENT,
+    name STRING (20) , 
+	 image       STRING (100) 
+);
+
+
+INSERT INTO categories 
+(   name , image ) 
+VALUES 
+(  'Nike' , 'nike_logo.png' ); 
+
+
+
+INSERT INTO categories 
+(   name ,image ) 
+VALUES 
+(  'Adidas' , 'adidas_logo.png' ); 
+
+
+INSERT INTO categories 
+(   name , image) 
+VALUES 
+(  'Jordan' , 'jordan_logo.png' ); 
+
+
+INSERT INTO categories 
+(   name , image ) 
+VALUES 
+(  'Puma' , 'puma_logo.png' ); 
+
+
+select * from categories;
+
+update categories set image = 'nike_logo.png' where id = 1 ;
+
+update categories set image = 'adidas_logo.png' where id = 2 ;
+update categories set image = 'jordan_logo.png' where id = 3 ;
+update categories set image =  'puma_logo.png' where id = 4 ;
+
+
+
+
+
+
+
+CREATE TABLE products (
+    id          INTEGER         PRIMARY KEY AUTOINCREMENT,
+    categorieid INTEGER         REFERENCES categories (id),
+    name        STRING (20),
+    description STRING (100),
+    price       NUMERIC (18, 2),
+    image       STRING (100) 
+);
+
+INSERT INTO products 
+( categorieid , name , description , price , image ) 
+VALUES ( 1 , 'Nike Air Max 97 Nike Day' , 'Nike Air Max 97 Nike Day' , 200 , '' ) 
+;
+
+INSERT INTO products 
+( categorieid , name , description , price , image ) 
+VALUES ( 1 , 'Nike Air Max 95' , 'Nike Air Max 95' , 300 , '' ) 
+;
+
+
+INSERT INTO products 
+( categorieid , name , description , price , image ) 
+VALUES ( 1 , 'Nike Air 97 Rainforest' , 'Nike Air 97 Rainforest' , 250 , '' ) 
+
+///
+INSERT INTO products 
+( categorieid , name , description , price , image ) 
+VALUES ( 1 , 'Nike_Air_Force_1_Low_Off_White_Volt' , 'Nike_Air_Force_1_Low_Off_White_Volt' , 400 , 'Nike_Air_Force_1_Low_Off_White_Volt.jpg' ) 
+;
+
+INSERT INTO products 
+( categorieid , name , description , price , image ) 
+VALUES ( 1 , 'Nike_Air_Max_Sean_Wotherspoon' , 'Nike_Air_Max_Sean_Wotherspoon' , 355 , 'Nike_Air_Max_Sean_Wotherspoon.jpg' ) 
+;
+
+INSERT INTO products 
+( categorieid , name , description , price , image ) 
+VALUES ( 1 , 'Nike_Vaporwaffle_sacai_Black' , 'Nike_Vaporwaffle_sacai_Black' , 800 , 'Nike_Vaporwaffle_sacai_Black.jpg' ) 
+;
+;
+
+select * from products :
+
+
+INSERT INTO products 
+( categorieid , name , description , price , image ) 
+VALUES ( 2 , 'Adidas BAPE nmd' , 'Adidas BAPE nmd' , 250 , '' ) 
+;
+
+
+INSERT INTO products 
+( categorieid , name , description , price , image ) 
+VALUES ( 2 , 'Adidas Yeezy 350 Bred' , 'Adidas Yeezy 350 Bred' ,200 , '' ) 
+;
+
+
+INSERT INTO products 
+( categorieid , name , description , price , image ) 
+VALUES ( 2 , 'Adidas Yezzy 350 linen' , 'Adidas Yezzy 350 linen' , 300 , '' ) 
+;
+
+///
+INSERT INTO products 
+( categorieid , name , description , price , image ) 
+VALUES ( 2 , 'adidas_Yeezy_500_Soft_Vision' , 'adidas_Yeezy_500_Soft_Vision' , 2550 , 'adidas_Yeezy_500_Soft_Vision.jpg' ) 
+;
+
+
+INSERT INTO products 
+( categorieid , name , description , price , image ) 
+VALUES ( 2 , 'adidas_Yeezy_Boost_380' , 'adidas_Yeezy_Boost_380' ,2000 , 'adidas_Yeezy_Boost_380.jpg' ) 
+;
+
+
+INSERT INTO products 
+( categorieid , name , description , price , image ) 
+VALUES ( 2 , 'adidas_Yeezy_Boost_380_Onyx' , 'adidas_Yeezy_Boost_380_Onyx' , 800 , 'adidas_Yeezy_Boost_380_Onyx.jpg' ) 
+;
+
+
+
+INSERT INTO products 
+( categorieid , name , description , price , image ) 
+VALUES ( 3 , 'Nike Air Jordan 1 USA' , 'Nike Air Jordan 1 USA' , 300 , '' ) 
+;
+
+INSERT INTO products 
+( categorieid , name , description , price , image ) 
+VALUES ( 3 , 'Jordan_13_Retro_Black_Hyper_Royal' , 'Jordan_13_Retro_Black_Hyper_Royal' , 600 , '' ) 
+;
+
+INSERT INTO products 
+( categorieid , name , description , price , image ) 
+VALUES ( 3 , 'Jordan_1_Retro_High_NRG' , 'Jordan_1_Retro_High_NRG' , 450 , '' ) 
+;
+///
+
+INSERT INTO products 
+( categorieid , name , description , price , image ) 
+VALUES ( 3 , 'Jordan_1_Low_University_Blue' , 'Jordan_1_Low_University_Blue' , 500 , 'Jordan_1_Low_University_Blue.jpg' ) 
+;
+
+INSERT INTO products 
+( categorieid , name , description , price , image ) 
+VALUES ( 3 , 'Jordan_1_Mid_SE_Multi_Color' , 'Jordan_1_Mid_SE_Multi_Color' , 600 , 'Jordan_1_Mid_SE_Multi_Color.jpg' ) 
+;
+
+INSERT INTO products 
+( categorieid , name , description , price , image ) 
+VALUES ( 3 , 'Jordan_4_Retro_Laser_Black' , 'Jordan_4_Retro_Laser_Black' , 650 , 'Jordan_4_Retro_Laser_Black.jpg' ) 
+;
+
+INSERT INTO products 
+( categorieid , name , description , price , image ) 
+VALUES ( 4 , 'Free_Transparent_Puma' , 'Free_Transparent_Puma' , 200 , '' ) 
+;
+INSERT INTO products 
+( categorieid , name , description , price , image ) 
+VALUES ( 4 , 'puma_purple_ribbon' , 'puma_purple_ribbon' , 350 , '' ) 
+;
+INSERT INTO products 
+( categorieid , name , description , price , image ) 
+VALUES ( 4 , 'Puma_Rs_X_Reinvention_Whisper' , 'Puma_Rs_X_Reinvention_Whisper' , 150 , '' ) 
+;
+
+///
+INSERT INTO products 
+( categorieid , name , description , price , image ) 
+VALUES ( 4 , 'puma_tronic' , 'puma_tronic' , 500 , 'puma_tronic.jpg' ) 
+;
+
+INSERT INTO products 
+( categorieid , name , description , price , image ) 
+VALUES ( 4 , 'Suede_Shoe_Puma_Brothel' , 'Suede_Shoe_Puma_Brothel' , 550 , 'Suede_Shoe_Puma_Brothel.jpg' ) 
+;
+
+INSERT INTO products 
+( categorieid , name , description , price , image ) 
+VALUES ( 4 , 'White_Puma_Sneakers_Basket' , 'White_Puma_Sneakers_Basket' , 650 , 'White_Puma_Sneakers_Basket.jpg' ) 
+;
+
+
+update products set image = 'Nike/Nike_Air_Max_97_Off_White_Menta.jpg' where id = 1 ;
+
+update products set image = 'Nike/Nike_Air_Max_95_OG_Neon.jpg' where id = 2 ;
+
+update products set image = 'Nike/Nike_Air_Force_1_Low_Off_White_Volt.jpg' where id = 3 ;
+
+//
+update products set image = 'Adidas/Adidas_BAPE_nmd.jpg' where id = 4 ;
+
+update products set image = 'Adidas/Adidas_Yezzy_350_linen.jpg' where id = 5 ;
+
+update products set image = 'Adidas/Adidas_Yeezy_350_Bred.jpg' where id = 6 ;
+
+//
+update products set image = 'Puma/Free_Transparent_Puma.jpg' where id = 7 ;
+
+update products set image = 'Puma/puma_purple_ribbon.jpg' where id = 8 ;
+
+update products set image = 'Puma/Puma_Rs_X_Reinvention_Whisper.jpg' where id = 9 ;
+
+//
+update products set image = 'Jordan/Nike_Air_Jordan_1_USA.jpg' where id = 10 ;
+
+update products set image = 'Jordan/Jordan_13_Retro_Black_Hyper_Royal.jpg' where id = 11 ;
+
+update products set image = 'Jordan/Jordan_1_Retro_High_NRG.jpg' where id = 12 ;
+
+
+
+select * from products where categorieid = 1 ;
+
+update products set image = 'Nike/Nike_Air_Max_97_Off_White_Menta.jpg'  where id = 3 ;
+
+update products set image = 'Nike/Nike_Air_Force_1_Low_Off_White_Volt.jpg'  where id = 13 ;
+
+update products set image = 'Nike/Nike_Air_Max_Sean_Wotherspoon.jpg'  where id = 14 ;
+
+update products set image = 'Nike/Nike_Vaporwaffle_sacai_Black.jpg'  where id = 15 ;
+------------------------
+
+select * from products where categorieid = 2 ;
+
+
+update products set image = 'Adidas/adidas_Yeezy_500_Soft_Vision.jpg'  where id = 16 ;
+
+update products set image = 'Adidas/adidas_Yeezy_Boost_380.jpg'  where id = 17 ;
+
+update products set image = 'Adidas/adidas_Yeezy_Boost_380_Onyx.jpg'  where id = 18 ;
+
+----------------------------------
+select * from products where categorieid = 3 ;
+
+update products set image = 'Jordan/Nike_Air_Jordan_1_USA.jpg'  where id = 7 ;
+
+update products set image = 'Jordan/Jordan_13_Retro_Black_Hyper_Royal.jpg'  where id = 8 ;
+
+
+update products set image = 'Jordan/Jordan_1_Retro_High_NRG.jpg'  where id = 9 ;
+
+
+
+update products set image = 'Jordan/Jordan_1_Low_University_Blue.jpg'  where id = 19 ;
+
+update products set image = 'Jordan/Jordan_1_Mid_SE_Multi_Color.jpg'  where id = 20 ;
+
+update products set image = 'Jordan/Jordan_4_Retro_Laser_Black.jpg'  where id = 21 ;
+---------------------------
+
+
+select * from products where categorieid = 4 ;
+
+update products set image = 'Puma/Free_Transparent_Puma.jpg'  where id = 10 ;
+
+update products set image = 'Puma/puma_purple_ribbon.jpg'  where id = 11 ;
+
+
+update products set image = 'Puma/Puma_Rs_X_Reinvention_Whisper.jpg'  where id = 12 ;
+
+
+
+update products set image = 'Puma/puma_tronic.jpg'  where id = 22 ;
+
+update products set image = 'Puma/Suede_Shoe_Puma_Brothel.jpg'  where id = 23 ;
+
+update products set image = 'Puma/White_Puma_Sneakers_Basket.jpg'  where id = 24 ;
+
+
+CREATE TABLE users (
+    id        INTEGER     PRIMARY KEY AUTOINCREMENT,
+	username   STRING (50),
+    firstname REAL (25),
+    lastname  STRING (25),
+    email     STRING (50),
+    telephone STRING (10) , 
+	password     STRING (50)
+);
+
+
+INSERT INTO users 
+( username , firstname ,lastname ,  email , telephone , password ) 
+VALUES ( 'rdosantos' , 'Ricardo' , 'Dos Santos' , 'ricardo@domian.com' , '514-456-7890' , '1234' ) 
+;
+
+select * from users ;
+
+
+CREATE TABLE orders (
+    id     INTEGER         PRIMARY KEY AUTOINCREMENT,
+    userid INTEGER         REFERENCES users (id),
+    amount NUMERIC (18, 2),
+    tax    NUMERIC (18, 2),
+    date   DATE
+);
+
+
+
+
+CREATE TABLE orderdetails (
+    id        INTEGER PRIMARY KEY AUTOINCREMENT,
+    orderid   INTEGER REFERENCES orders (id),
+    productid INTEGER REFERENCES products (id),
+    quantity  INTEGER
+);
+
+
+CREATE TABLE chart (
+    id        INTEGER PRIMARY KEY AUTOINCREMENT,
+    productid INTEGER REFERENCES products (id),
+	price NUMERIC (18, 2),
+    quantity  INTEGER 
+	
+);
+
+
+
